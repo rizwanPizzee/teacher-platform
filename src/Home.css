@@ -4,8 +4,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9fafb;
+    color: rgb(51, 51, 51);
+    background-color: rgb(241, 241, 241);
 }
 
 h1,
@@ -17,7 +17,7 @@ h2 {
 button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #00123a;
+    background-color: rgb(0, 18, 58);
     color: white;
     border: none;
     border-radius: 5px;
@@ -26,12 +26,12 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: rgb(0, 86, 179);
 }
 
 a {
     text-decoration: none;
-    color: #0056b3;
+    color: rgb(0, 86, 179);
 }
 
 a:hover {
@@ -39,7 +39,7 @@ a:hover {
 }
 
 .header {
-    background-color: #00123a;
+    background-color: rgb(0, 18, 58);
     color: white;
     padding: 20px;
     text-align: center;
@@ -54,7 +54,7 @@ a:hover {
     height: 300px;
     padding: 40px 20px;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: rgb(244, 244, 244);
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url("assets/teacher1.jpeg");
     background-position: center 60%;
@@ -89,11 +89,12 @@ a:hover {
 .course-card {
     background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     width: 300px;
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.25s ease;
+    cursor: default;
 }
 
 .course-card:hover {
@@ -101,21 +102,42 @@ a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+.trusted-by {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(252, 252, 252);
+}
+
+.trusted-by img {
+    height: 150px;
+    padding: 20px;
+    filter: grayscale(0.5);
+    transition: all 0.3s ease;
+}
+
+.trusted-by img:hover {
+    transform: scale(1.03);
+}
+
 .testimonials {
     padding: 40px 10px;
     text-align: center;
-    background-color: #fdfdfd;
+    background-color: rgb(253, 253, 253);
     overflow: hidden;
     cursor: default;
 }
 
-.testimonials h2 {
+.testimonials h2,
+.trusted-by h2 {
     margin-bottom: 20px;
     font-size: 2rem;
 }
 
 .testimonial-slider {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -130,7 +152,7 @@ a:hover {
     padding: 20px;
     border-radius: 8px;
     font-style: italic;
-    color: #555;
+    color: rgb(85, 85, 85);
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -144,44 +166,10 @@ a:hover {
     margin: 0;
 }
 
-.cta {
-    padding: 40px 20px;
-    background-color: #00123a;
-    color: white;
-    text-align: center;
-}
-
-.cta button {
-    background-color: #f4b400;
-    color: #00123a;
-}
-
-.cta button:hover {
-    background-color: #ff9900;
-}
-
-.cta h2 {
-    margin-top: 10px;
-}
-
-.cta a {
-    text-decoration: none;
-}
-
-.footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #00123a;
-    color: white;
-}
-
-.footer nav a {
-    margin: 0 10px;
-    color: #f4b400;
-}
-
-.footer nav a:hover {
-    color: white;
+@media (max-width: 1120px) {
+    .testimonial-slider {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -195,9 +183,23 @@ a:hover {
     }
 }
 
+@media (max-width: 600px) {
+    .testimonial-slider {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media (max-width: 480px) {
     button {
         width: 100%;
         padding: 12px;
+    }
+
+    .testimonial-slider {
+        grid-template-columns: 1fr;
+    }
+
+    .trusted-by img {
+        height: 120px;
     }
 }

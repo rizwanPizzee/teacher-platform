@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Roboto;
+    background-color: rgb(241, 241, 241);
 }
 
 header {
@@ -101,4 +102,54 @@ header h1 {
 .courses-link-container:hover .courses-list-header {
     opacity: 1;
     pointer-events: all;
+}
+
+.cta {
+    padding: 40px 20px;
+    background-color: #00123a;
+    color: white;
+    text-align: center;
+}
+
+.cta button {
+    background-color: #f4b400;
+    color: #00123a;
+}
+
+.cta button:hover {
+    background-color: #ff9900;
+}
+
+.cta h2 {
+    margin-top: 10px;
+}
+
+.cta a {
+    text-decoration: none;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #00123a;
+    color: white;
+}
+
+.footer nav a {
+    margin: 0 10px;
+    color: #f4b400;
+}
+
+.footer nav a:hover {
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .route-links {
+        font-size: 0.92rem;
+    }
+
+    .h-nav-bar-header {
+        height: 30px;
+    }
 }

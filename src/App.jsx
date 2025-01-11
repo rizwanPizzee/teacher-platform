@@ -5,9 +5,17 @@ import Courses from "./Courses.jsx";
 import Videos from "./Videos.jsx";
 import About from "./About.jsx";
 import Contact from "./Contact.jsx";
+import FAQ from "./FAQ.jsx";
+
 import "./App.css";
 
 function App() {
+  function windowTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  }
   return (
     <>
       <header>
@@ -15,7 +23,7 @@ function App() {
       </header>
 
       <div className="h-nav-bar-header">
-        <div>
+        <div onClick={windowTop}>
           <NavLink
             className={({ isActive }) =>
               isActive ? "route-links active" : "route-links"
@@ -25,7 +33,7 @@ function App() {
             Home
           </NavLink>
         </div>
-        <div className="courses-link-container">
+        <div onClick={windowTop} className="courses-link-container">
           <NavLink
             className={({ isActive }) =>
               isActive ? "route-links active" : "route-links"
@@ -36,9 +44,7 @@ function App() {
           </NavLink>
           <div className="courses-list-header-outer">
             <div className="courses-list-header">
-              <div className="courses-list-header-inner">
-                HCI
-              </div>
+              <div className="courses-list-header-inner">HCI</div>
               <div className="courses-list-header-inner">OOSE</div>
               <div className="courses-list-header-inner">ISE</div>
             </div>
@@ -54,7 +60,7 @@ function App() {
             Videos
           </NavLink>
         </div>
-        <div>
+        <div onClick={windowTop}>
           <NavLink
             className={({ isActive }) =>
               isActive ? "route-links active" : "route-links"
@@ -64,7 +70,7 @@ function App() {
             About
           </NavLink>
         </div>
-        <div>
+        <div onClick={windowTop}>
           <NavLink
             className={({ isActive }) =>
               isActive ? "route-links active" : "route-links"
@@ -72,6 +78,16 @@ function App() {
             to="/contact"
           >
             Contact
+          </NavLink>
+        </div>
+        <div onClick={windowTop}>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "route-links active" : "route-links"
+            }
+            to="/faq"
+          >
+            FAQ
           </NavLink>
         </div>
       </div>
@@ -82,6 +98,7 @@ function App() {
         <Route path="/videos" element={<Videos />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
     </>
   );

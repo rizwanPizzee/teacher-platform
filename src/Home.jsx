@@ -1,9 +1,34 @@
 import "./Home.css";
-import React, { useState, useEffect } from "react";
+import Footer from "./Footer.jsx";
+import fuuast from "./assets/fuuast.png";
+import szabist from "./assets/szabist.png";
 function Home() {
+  const testimonials = [
+    {
+      stdTestimonials: `"Sir Khawaja Tahir transformed my understanding of HCI!" - Ayesha
+              R.`,
+    },
+    {
+      stdTestimonials: `"OOSE classes were practical and insightful. Highly recommended!"
+              - Ali M.`,
+    },
+    {
+      stdTestimonials: `"ISE concepts were explained so well, I aced my project!" - Sarah
+              K.`,
+    },
+    {
+      stdTestimonials: `"Learning with Sir Khawaja Tahir has been a game-changer for me."
+              - Ahmed T.`,
+    },
+    {
+      stdTestimonials: `"The interactive sessions made complex topics easy to understand!"
+              - Fatima S.`,
+    },
+  ];
+
   return (
     <>
-      <section class="about-teacher">
+      <section className="about-teacher">
         <h2>About Khawaja Tahir</h2>
         <p>
           Khawaja Tahir is an experienced educator specializing in Software
@@ -13,10 +38,10 @@ function Home() {
         </p>
       </section>
 
-      <section class="courses">
+      <section className="courses">
         <h2>Explore Courses</h2>
-        <div class="course-list">
-          <div class="course-card">
+        <div className="course-list">
+          <div className="course-card">
             <h3>Human-Computer Interaction (HCI)</h3>
             <p>
               Learn to design user-friendly systems by mastering principles of
@@ -24,7 +49,7 @@ function Home() {
             </p>
             <button>Learn More</button>
           </div>
-          <div class="course-card">
+          <div className="course-card">
             <h3>Object-Oriented Software Engineering (OOSE)</h3>
             <p>
               Understand scalable system design through object-oriented
@@ -32,70 +57,40 @@ function Home() {
             </p>
             <button>Learn More</button>
           </div>
-          <div class="course-card">
-            <h3>Information Systems Engineering (ISE)</h3>
-            <p>
-              Delve into data-driven solutions and information systems design.
-            </p>
+          <div className="course-card">
+            <h3>Introduction to Software Engineering (ISE)</h3>
+            <p>Laying the foundation for a successful career in technology.</p>
             <button>Learn More</button>
           </div>
         </div>
       </section>
-
-      <section class="testimonials">
-        <h2>What Students Say</h2>
-        <div class="testimonial-slider">
-          <div class="testimonial">
-            <p>
-              "Sir Khawaja Tahir transformed my understanding of HCI!" - Ayesha
-              R.
-            </p>
+      <section className="trusted-by">
+        <h2>Trusted By</h2>
+        <div>
+          <div>
+            <a href="https://fuuastisb.edu.pk/" target="_blank">
+              <img src={fuuast} alt="fuuast.png" />
+            </a>
+            <a href="https://szabist-isb.edu.pk/" target="_blank">
+              <img src={szabist} alt="szabist.png" />
+            </a>
           </div>
-          <div class="testimonial">
-            <p>
-              "OOSE classes were practical and insightful. Highly recommended!"
-              - Ali M.
-            </p>
-          </div>
-          <div class="testimonial">
-            <p>
-              "ISE concepts were explained so well, I aced my project!" - Sarah
-              K.
-            </p>
-          </div>
-          <div class="testimonial">
-            <p>
-              "Learning with Sir Khawaja Tahir has been a game-changer for me."
-              - Ahmed T.
-            </p>
-          </div>
-          <div class="testimonial">
-            <p>
-              "The interactive sessions made complex topics easy to understand!"
-              - Fatima S.
-            </p>
-          </div>
+          <div></div>
         </div>
       </section>
-
-      <section class="cta">
-        <h2>Join Khawaja Tahir's Courses Today</h2>
-        <p>
-          Start your journey in mastering HCI, OOSE and ISE with personalized
-          guidance.
-        </p>
-        <button>
-          <a href="/courses">Get Started Now</a>
-        </button>
+      <section className="testimonials">
+        <h2>What Students Say</h2>
+        <div className="testimonial-slider">
+          {testimonials.map((feedback, index) => {
+            return (
+              <div key={index} className="testimonial">
+                <p>{feedback.stdTestimonials}</p>
+              </div>
+            );
+          })}
+        </div>
       </section>
-
-      <footer class="footer">
-        <p>&copy; 2025 Khawaja Tahir Academy. All rights reserved.</p>
-        <nav>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-        </nav>
-      </footer>
+      <Footer />
     </>
   );
 }
