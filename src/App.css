@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: Roboto;
+}
+
+header {
+    background-image: linear-gradient(to right, rgb(0, 18, 58), black);
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid white;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    cursor: default;
+}
+
+.h-nav-bar-header {
+    display: flex;
+    justify-content: space-evenly;
+    height: 50px;
+    align-items: center;
+    background-color: rgb(0, 18, 58);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.route-links {
+    text-decoration: none;
+    color: rgb(167, 167, 167);
+    font-family: Roboto;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: all 0.18s;
+}
+
+.route-links.active {
+    color: rgb(255, 255, 255);
+
+}
+
+.route-links:hover {
+    color: rgb(223, 220, 220);
+    text-decoration: none;
+}
+
+.courses-link-container {
+    display: flex;
+    position: relative;
+    text-decoration: none;
+}
+
+.courses-list-header-outer {
+    position: absolute;
+    top: 34px;
+    display: none;
+    padding-top: 5px;
+    cursor: pointer;
+
+}
+
+.courses-list-header {
+    margin-top: 3px;
+    background-color: rgb(0, 18, 58);
+    box-shadow: 0px 0px 4px rgba(2, 204, 255, 0.644);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.15s ease;
+    opacity: 0;
+    pointer-events: none;
+    padding: 10px 0px;
+}
+
+
+.courses-list-header-inner {
+    padding: 5px 10px 5px 10px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.15s ease;
+}
+
+.courses-list-header-inner:hover {
+    background-color: rgb(64, 85, 131);
+    color: white;
+}
+
+.courses-list-header-inner:active {
+    background-color: rgb(102, 113, 136);
+}
+
+.courses-link-container:hover .courses-list-header-outer {
+    display: block;
+}
+
+.courses-link-container:hover .courses-list-header {
+    opacity: 1;
+    pointer-events: all;
+}
