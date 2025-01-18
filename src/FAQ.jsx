@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./FAQ.css";
+import "./styles/FAQ.css";
 import Footer from "./Footer.jsx";
 
 function FAQ() {
@@ -9,7 +9,7 @@ function FAQ() {
     {
       question: "What courses are available on this platform?",
       answer:
-        "We offer courses in Human-Computer Interaction (HCI), Object-Oriented Software Engineering (OOSE), and Information Systems Engineering (ISE). These courses are designed to help you understand key concepts and skills needed to excel in the field of software engineering.",
+        "We offer courses in Human-Computer Interaction (HCI), Object-Oriented Software Engineering (OOSE) and Introduction to Software Engineering (ISE). These courses are designed to help you understand key concepts and skills needed to excel in the field of software engineering.",
     },
     {
       question: "Are the courses free?",
@@ -76,7 +76,6 @@ function FAQ() {
             >
               <div className="faq-question">
                 <h3>{item.question}</h3>
-                
               </div>
               <div className="faq-answer">
                 <p>{item.answer}</p>

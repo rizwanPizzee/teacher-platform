@@ -1,4 +1,4 @@
-import "./Contact.css";
+import "./styles/Contact.css";
 import Footer from "./Footer.jsx";
 import facebook from "./assets/facebook.png";
 import twitter from "./assets/twitter.png";
@@ -31,12 +31,12 @@ function Contact() {
             <div className="info-item">
               <h3>Email</h3>
               <p>
-                <a href="mailto:rizwanpizzee@gmail.com">
-                  rizwanpizzee@gmail.com
+                <a href="mailto:khawajatahirmahmood@gmail.com">
+                  khawajatahirmahmood@gmail.com
                 </a>
               </p>
             </div>
-            
+
             <div className="info-item social-links">
               <h3>Follow Us</h3>
               <a href="" target="_blank">
@@ -55,7 +55,7 @@ function Contact() {
           <h2>Send Us a Message</h2>
           <form
             className="contact-form"
-            action="mailto:mrk44561@gmail.com"
+            action="mailto:khawajatahirmahmood@gmail.com"
             method="POST"
             encType="text/plain"
           >

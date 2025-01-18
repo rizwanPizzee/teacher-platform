@@ -14,7 +14,7 @@ h2 {
     margin: 20px 0;
 }
 
-button {
+.learn-more-btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: rgb(0, 18, 58);
@@ -25,7 +25,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.learn-more-btn:hover {
     background-color: rgb(0, 86, 179);
 }
 
@@ -34,9 +34,6 @@ a {
     color: rgb(0, 86, 179);
 }
 
-a:hover {
-    text-decoration: underline;
-}
 
 .header {
     background-color: rgb(0, 18, 58);
@@ -56,7 +53,7 @@ a:hover {
     text-align: center;
     background-color: rgb(244, 244, 244);
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("assets/teacher1.jpeg");
+        url("../assets/teacher1.jpeg");
     background-position: center 60%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -102,11 +99,24 @@ a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+.lrn-mre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .trusted-by {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(252, 252, 252);
+}
+
+.instructor {
+    margin: 0;
+    padding-bottom: 40px;
     background-color: rgb(252, 252, 252);
 }
 
@@ -121,15 +131,26 @@ a:hover {
     transform: scale(1.03);
 }
 
-.testimonials {
+.awards,
+.testimonials-home {
     padding: 40px 10px;
+    background-color: white;
     text-align: center;
-    background-color: rgb(253, 253, 253);
     overflow: hidden;
     cursor: default;
 }
 
-.testimonials h2,
+.awards {
+    padding-bottom: 20px;
+}
+
+.awards p {
+    font-size: 1.2rem;
+
+}
+
+.awards h2,
+.testimonials-home h2,
 .trusted-by h2 {
     margin-bottom: 20px;
     font-size: 2rem;
@@ -143,10 +164,10 @@ a:hover {
     padding: 10px;
     gap: 20px;
     overflow: hidden;
-    padding: 10px;
 }
 
-.testimonial {
+
+.testimonial-home {
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
     padding: 20px;
@@ -157,14 +178,15 @@ a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonial:hover {
+.testimonial-home:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.testimonial p {
+.testimonial-home p {
     margin: 0;
 }
+
 
 @media (max-width: 1120px) {
     .testimonial-slider {
@@ -190,7 +212,7 @@ a:hover {
 }
 
 @media (max-width: 480px) {
-    button {
+    .learn-more-btn {
         width: 100%;
         padding: 12px;
     }

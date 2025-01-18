@@ -7,9 +7,11 @@ function Footer() {
           Start your journey in mastering HCI, OOSE and ISE with personalized
           guidance.
         </p>
-        <button>
-          <a href="/courses">Get Started Now</a>
-        </button>
+        <a href="/courses">
+          <button className="get-btn">
+            Get Started Now
+          </button>
+        </a>
       </section>
       <footer className="footer">
         <p>&copy; 2025 Khawaja Tahir Academy. All rights reserved.</p>
