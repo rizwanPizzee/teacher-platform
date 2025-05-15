@@ -12,9 +12,12 @@ function Footer() {
           Start your journey in mastering HCI, OOSE and ISE with personalized
           guidance.
         </p>
-        <a href="/courses">
+        {/* <a href="/courses">
           <button className="get-btn">Get Started Now</button>
-        </a>
+        </a> */}
+        <NavLink onClick={windowScroll} to="/courses">
+          <button className="get-btn">Get Started Now</button>
+        </NavLink>
       </section>
       <footer className="footer">
         <p>&copy; 2025 Khawaja Tahir Academy. All rights reserved.</p>
