@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import backIcon from "../assets/back.png";
 import "./styles/CourseContent.css";
 
@@ -24,9 +25,12 @@ function CourseContent() {
     <div className="course-content-container-outer">
       <div className="course-content-container">
         <div className="header-hci-lec">
-          <a href="/courses/hci/lectures" className="back-icon-link">
+          {/* <a href="/courses/hci/lectures" className="back-icon-link">
             <img src={backIcon} alt="Go Back" className="back-icon" />
-          </a>
+          </a> */}
+          <NavLink to="/courses/hci/lectures" className="back-icon-link">
+            <img src={backIcon} alt="Go Back" className="back-icon" />
+          </NavLink>
           <h1 className="lectures-title">Course Outlines</h1>
           <div></div>
         </div>

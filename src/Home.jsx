@@ -2,7 +2,11 @@ import "./styles/Home.css";
 import Footer from "./Footer.jsx";
 import fuuast from "./assets/fuuast.png";
 import szabist from "./assets/szabist.png";
+import { NavLink } from "react-router-dom";
 function Home() {
+  function windowScroll() {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }
   const testimonials = [
     {
       stdTestimonials: `"Sir Khawaja Tahir transformed my understanding of HCI!" - Ayesha
@@ -41,15 +45,21 @@ function Home() {
       </section>
 
       <section className="courses">
-        <h2>Explore Courses</h2>
+        <h2>Explore All Courses</h2>
         <div className="course-list">
           <div className="course-card">
-            <h3>Human-Computer Interaction (HCI)</h3>
-            <p>
-              Learn to design user-friendly systems by mastering principles of
-              HCI.
-            </p>
+            <NavLink
+              to="/courses/hci/lectures"
+              style={{ color: "rgb(51, 51, 51)" }}
+            >
+              <h3>Human-Computer Interaction (HCI)</h3>
+              <p>
+                Learn to design user-friendly systems by mastering principles of
+                HCI.
+              </p>
+            </NavLink>
           </div>
+
           <div className="course-card">
             <h3>Object-Oriented Software Engineering (OOSE)</h3>
             <p>
@@ -63,9 +73,12 @@ function Home() {
           </div>
         </div>
         <div className="lrn-mre">
-          <a href="/courses">
+          {/* <a href="/courses">
             <button className="learn-more-btn">Learn More</button>
-          </a>
+          </a> */}
+          <NavLink to="/courses">
+            <button className="learn-more-btn">Learn More</button>
+          </NavLink>
         </div>
       </section>
       <section className="trusted-by">
@@ -87,20 +100,25 @@ function Home() {
         <p>Awarded Best Educator in Computer Science 2025 (FUUAST)</p>
       </section>
       <div className="lrn-mre instructor">
-        <a href="/about">
+        {/* <a href="/about">
           <button className="learn-more-btn">More About Instructor</button>
-        </a>
+        </a> */}
+        <NavLink onClick={windowScroll} to="/about">
+          <button className="learn-more-btn">More About Instructor</button>
+        </NavLink>
       </div>
       <section className="testimonials-home">
         <h2>What Students Say</h2>
-        <div className="testimonial-slider">
-          {testimonials.map((feedback, index) => {
-            return (
-              <div key={index} className="testimonial-home">
-                <p>{feedback.stdTestimonials}</p>
-              </div>
-            );
-          })}
+        <div className="testimonial-slider-outer">
+          <div className="testimonial-slider">
+            {testimonials.map((feedback, index) => {
+              return (
+                <div key={index} className="testimonial-home">
+                  <p>{feedback.stdTestimonials}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 

@@ -90,12 +90,12 @@ a {
     width: 300px;
     padding: 20px;
     text-align: center;
-    transition: all 0.25s ease;
+    transition: all 0.5s ease;
     cursor: default;
 }
 
 .course-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -123,12 +123,13 @@ a {
 .trusted-by img {
     height: 150px;
     padding: 20px;
-    filter: grayscale(0.5);
+    filter: grayscale(1);
     transition: all 0.3s ease;
 }
 
 .trusted-by img:hover {
     transform: scale(1.03);
+    filter: grayscale(0);
 }
 
 .awards,
@@ -156,7 +157,14 @@ a {
     font-size: 2rem;
 }
 
+.testimonial-slider-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .testimonial-slider {
+    max-width: 1200px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
@@ -169,17 +177,20 @@ a {
 
 .testimonial-home {
     background: white;
+    height: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
     padding: 20px;
     border-radius: 8px;
     font-style: italic;
     color: rgb(85, 85, 85);
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:all 0.4s ease;
 }
 
 .testimonial-home:hover {
-    transform: translateY(-5px);
+    transform: scale(1.06);
+    background-color: rgb(121, 121, 121);
+    color: white;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 

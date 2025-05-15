@@ -40,7 +40,8 @@
 }
 
 .lecture-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
+    background-color: rgb(240, 240, 240);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 

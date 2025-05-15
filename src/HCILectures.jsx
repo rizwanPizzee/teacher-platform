@@ -1,4 +1,5 @@
 import "./styles/HCILectures.css";
+import { NavLink } from "react-router-dom";
 import backIcon from "./assets/back.png";
 function HCILectures() {
   const cards = [
@@ -33,12 +34,15 @@ function HCILectures() {
       <div className="lectures-container">
         <div className="header-hci-lec">
           <div>
-            <a
+            {/* <a
               href="/courses
             "
             >
               <img src={backIcon} alt="backIcon.png" />
-            </a>
+            </a> */}
+            <NavLink to="/courses" className="back-icon-link">
+              <img src={backIcon} alt="Go Back" className="back-icon" />
+            </NavLink>
           </div>
           <div>
             <h1 className="lectures-title">HCI Lectures</h1>
@@ -47,9 +51,12 @@ function HCILectures() {
         </div>
         <div className="lectures-grid">
           {cards.map((card, index) => (
-            <a key={index} href={card.path} className="lecture-card">
+            // <a key={index} href={card.path} className="lecture-card">
+            //   <div className="lecture-card-content">{card.title}</div>
+            // </a>
+            <NavLink key={index} to={card.path} className="lecture-card">
               <div className="lecture-card-content">{card.title}</div>
-            </a>
+            </NavLink>
           ))}
         </div>
       </div>

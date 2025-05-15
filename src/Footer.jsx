@@ -1,4 +1,9 @@
+import { NavLink } from "react-router-dom";
+
 function Footer() {
+  function windowScroll() {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }
   return (
     <div>
       <section className="cta">
@@ -8,17 +13,21 @@ function Footer() {
           guidance.
         </p>
         <a href="/courses">
-          <button className="get-btn">
-            Get Started Now
-          </button>
+          <button className="get-btn">Get Started Now</button>
         </a>
       </section>
       <footer className="footer">
         <p>&copy; 2025 Khawaja Tahir Academy. All rights reserved.</p>
         <nav>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-          <a href="/faq">FAQ</a>
+          <NavLink onClick={windowScroll} to="/about">
+            About
+          </NavLink>
+          <NavLink onClick={windowScroll} to="/contact">
+            Contact
+          </NavLink>
+          <NavLink onClick={windowScroll} to="/faq">
+            FAQ
+          </NavLink>
         </nav>
       </footer>
     </div>
